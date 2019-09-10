@@ -4,7 +4,7 @@ This application generates fake immunisation data based on the [New Zealand immu
 
 ## API
 
-`/immunisation_records/some_identifier?date_of_birth=1998-12-30`
+`/immunisation_records?feijoa_id=some_identifier&date_of_birth=1998-12-30`
 This will return made-up immunisation records in the format:
 
 ```
