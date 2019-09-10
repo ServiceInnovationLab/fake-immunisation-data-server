@@ -12,6 +12,15 @@ class ImmunisationInventor
     immunisations
   end
 
+  def partial_immunisation_coverage(coverage_rate: 0.5)
+    immunisations = full_immunisation_coverage
+    missing_imms_length = immunisations.length - (immunisations.length * coverage_rate).to_i
+    missing_imms_length.times do
+      immunisations.delete_at(rand(0..(immunisations.length - 1)))
+    end
+    immunisations
+  end
+
   private
 
   def dtap_ipv_hepb_hib(date: 2.days.ago)
