@@ -13,7 +13,7 @@ class ImmunisationRecordsController < ApplicationController
   def set_immunisation_record
     @immunisation_record = ImmunisationRecord.find_or_create_by(feijoa_id: params[:feijoa_id])
     @immunisation_record.update_or_populate_data(
-      date_of_birth: date_of_birth
+      given_date_of_birth: date_of_birth
     )
   end
 

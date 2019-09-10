@@ -25,7 +25,7 @@ class ImmunisationInventor
         text: 'Infanrix-hexa'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = "Protects against diphtheria, tetanus, pertussis (whooping cough), polio, hepatitis B and Haemophilus influenzae type b (Hib)."
+    imm.note = FHIR::Annotation.new(text: "Protects against diphtheria, tetanus, pertussis (whooping cough), polio, hepatitis B and Haemophilus influenzae type b (Hib).")
     imm
   end
 
@@ -40,7 +40,7 @@ class ImmunisationInventor
         text: 'Synflorix'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against pneumococcal disease caused by at least 10 types of Streptococcus pneumoniae.'
+    imm.note = FHIR::Annotation.new(text: 'Protects against pneumococcal disease caused by at least 10 types of Streptococcus pneumoniae.')
     imm
   end
 
@@ -54,7 +54,7 @@ class ImmunisationInventor
         text: 'Rotarix'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against rotavirus.'
+    imm.note = FHIR::Annotation.new(text: 'Protects against rotavirus.')
     imm
   end
 
@@ -69,7 +69,7 @@ class ImmunisationInventor
         text: 'Priorix'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against measles, mumps and rubella.'
+    imm.note = FHIR::Annotation.new(text: 'Protects against measles, mumps and rubella.')
     imm
   end
 
@@ -84,7 +84,7 @@ class ImmunisationInventor
         text: 'Hiberix'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against Haemophilus influenzae type b (Hib) disease.'
+    imm.note = FHIR::Annotation.new(text: 'Protects against Haemophilus influenzae type b (Hib) disease.')
     imm
   end
 
@@ -99,7 +99,7 @@ class ImmunisationInventor
         text: 'Varilrix'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against varicella (chickenpox).'
+    imm.note = FHIR::Annotation.new(text: 'Protects against varicella (chickenpox).')
     imm
   end
 
@@ -114,7 +114,7 @@ class ImmunisationInventor
         text: 'Infanrix-IPV'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against diphtheria, tetanus, pertussis (whooping cough) and polio.'
+    imm.note = FHIR::Annotation.new(text: 'Protects against diphtheria, tetanus, pertussis (whooping cough) and polio.')
     imm
   end
 
@@ -129,7 +129,7 @@ class ImmunisationInventor
         text: 'Boostrix'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against tetanus, diphtheria and pertussis (whooping cough).'
+    imm.note = FHIR::Annotation.new(text: 'Protects against tetanus, diphtheria and pertussis (whooping cough).')
     imm
   end
 
@@ -144,7 +144,7 @@ class ImmunisationInventor
         text: 'Gardasil'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against nine types of human papillomavirus.'
+    imm.note = FHIR::Annotation.new(text: 'Protects against nine types of human papillomavirus.')
     imm
   end
 
@@ -159,7 +159,7 @@ class ImmunisationInventor
         text: 'ADT Booster'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against tetanus and diphtheria.'
+    imm.note = FHIR::Annotation.new(text: 'Protects against tetanus and diphtheria.')
     imm
   end
 
@@ -174,7 +174,7 @@ class ImmunisationInventor
         text: 'Influvac Tetra'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Annual flu vaccination.'
+    imm.note = FHIR::Annotation.new(text: 'Annual flu vaccination.')
     imm
   end
 
@@ -189,7 +189,7 @@ class ImmunisationInventor
         text: 'Zostavax'
       )
     imm.occurrenceDateTime = date.iso8601
-    imm.note = 'Protects against herpes zoster (shingles).'
+    imm.note = FHIR::Annotation.new(text: 'Protects against herpes zoster (shingles).')
     imm
   end
 end
