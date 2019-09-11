@@ -1,0 +1,44 @@
+sudo: required
+language: ruby
+cache:
+  bundler: true
+  yarn: true
+services:
+- postgresql
+branches:
+  only:
+  - master
+addons:
+  postgresql: '10'
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+    - chromium-chromedriver
+    - google-chrome-stable
+env:
+  global:
+  - RAILS_ENV=test
+before_script:
+- bundle install
+- yarn install
+- RAILS_ENV=test bundle exec rake db:create db:migrate
+# - bundle exec assets:precompile
+script:
+- bundle exec rspec
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  on:
+    repo: ServiceInnovationLab/fake-immunisation-data-server
+  app:
+    master: fake-immunisation-data-server
+  run:
+  - bundle install
+  - yarn install
+  - bundle exec rake tmp:cache:clear
+  - bundle exec rake db:migrate
+  # - bundle exec rake assets:precompile
+  - restart
+  api_key:
+    secure: iP2h4S5yK8SY4/KFO7Y3YYmngHMn1AutjcYYtbWm3hycD8eZp2qo6pJXSRjMEoKWypO6Oqo3Zxdmv1wJ4T1N91FBXjpsK6l2oZUuKmshntvglL3XMP/y9oUvwFTSr6dslrfc2BUqjkUtEn29BsSgjEVlBoOhmsFWomQckOVqpBTll8ef8YvutCxnAfDFupLdgXypYvROX8fADBQK0yepMHrB26Zc8kqTzsle4Gqok6dbfZhlUjkcKHoGJDpKx/HhSCNudrzHpdAhOCdcShzUaY1mKTy63/ya/emAbxCiIixoaPl459j0jkK50ylC4LZANt2vcCSl/QRO4Yzfy6vfcVTA1sM1f+JL4lza/FL7u1R1dJg4npGw/gr3ftzn5Mz2wZYm2LgTIDeT4EqnDl9Mt3GbHc9cE0zqO5W5LKccESRdJXbn2abw2SIcEIg7HFHg3XZjeSXOF9CfYAr6EiTrxtuz5wpJM/eLSvjyYbsecdc2O76lS/MZSaMryMKKIkIZF3mZRtdPUFTm07JqrSXkY529URN/3kUTsG3wKL9Bi7yCMjantxmmk3uZvTxuLWG1tw4WtfKkGDlXPo1Q6sPrduvCFJx0Pg4emOvMaBcD/uZ+lhLgja4QyP7BFA6cJPbKwLqRDsriFFYZDZdDNSfHDno2CnJs/PtvGHQUh/6mfk0=
